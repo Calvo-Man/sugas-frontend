@@ -38,7 +38,7 @@
       <ConfirmationDialog
         :active="show"
         :codigo="codigo"
-        mensaje="Resultado de aprendizaje"
+        mensaje="Resultado de aprendizaje y sus competencias asociadas"
         @cerrarconfirmation="cerrar"
         @procesar="deleteResultado"
       />
@@ -88,7 +88,11 @@ export default {
   methods: {
     async recargar() {
       if (this.programa && this.competencia) {
-        const response = await axios.get(`http://localhost:3000/resultados/${this.programa}/${this.competencia}`)
+        const response = await axios.get(`http://localhost:3000/resultados/${this.programa}/${this.competencia}`, {
+          headers: {
+            Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+          },
+        })
         this.programs = response.data
         this.$emit('plistado')
       }
@@ -108,7 +112,11 @@ export default {
     },
 
     async deleteResultado(codigo) {
-      const response = await axios.delete(`http://localhost:3000/resultados/codigo/${codigo}`)
+      const response = await axios.delete(`http://localhost:3000/resultados/codigo/${codigo}`, {
+        headers: {
+          Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+        },
+      })
       this.$notify({ text: 'Resultado eliminado con éxito...', type: 'success' })
       this.show = false
       this.codigo = null

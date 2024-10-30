@@ -1,7 +1,7 @@
 <script setup>
+import logo from '@images/logo.svg?raw'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
-import logo from '@images/logo.svg?raw'
 
 const props = defineProps({
   tag: {
@@ -27,12 +27,15 @@ Close overlay vertical nav when link is clicked
 */
 const route = useRoute()
 
-watch(() => route.path, () => {
-  props.toggleIsOverlayNavActive(false)
-})
+watch(
+  () => route.path,
+  () => {
+    props.toggleIsOverlayNavActive(false)
+  },
+)
 
 const isVerticalNavScrolled = ref(false)
-const updateIsVerticalNavScrolled = val => isVerticalNavScrolled.value = val
+const updateIsVerticalNavScrolled = val => (isVerticalNavScrolled.value = val)
 
 const handleNavScroll = evt => {
   isVerticalNavScrolled.value = evt.target.scrollTop > 0
@@ -42,13 +45,14 @@ const handleNavScroll = evt => {
 <template>
   <!-- eslint-disable vue/no-v-html -->
   <Component
+    style="background-color: transparent"
     :is="props.tag"
     ref="refNav"
     class="layout-vertical-nav"
     :class="[
       {
-        'visible': isOverlayNavActive,
-        'scrolled': isVerticalNavScrolled,
+        visible: isOverlayNavActive,
+        scrolled: isVerticalNavScrolled,
         'overlay-nav': mdAndDown,
       },
     ]"
@@ -65,9 +69,7 @@ const handleNavScroll = evt => {
             v-html="logo"
           />
 
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
-            Materio
-          </h1>
+          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">SUGAS</h1>
         </RouterLink>
       </slot>
     </div>
@@ -107,8 +109,8 @@ const handleNavScroll = evt => {
 </style>
 
 <style lang="scss">
-@use "@configured-variables" as variables;
-@use "@layouts/styles/mixins";
+@use '@configured-variables' as variables;
+@use '@layouts/styles/mixins';
 
 // 👉 Vertical Nav
 .layout-vertical-nav {

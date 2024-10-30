@@ -18,12 +18,13 @@
           <v-btn
             block
             @click="openWidget"
+            color="#008000"
             >Subir Archivo</v-btn
           >
         </v-col>
       </v-row>
 
-      <v-table theme="dark">
+      <v-table theme="white">
         <thead>
           <tr>
             <th class="text-left">Nombre</th>
@@ -41,7 +42,7 @@
         <v-col cols="6">
           <v-btn
             block
-            color="#16B1FF"
+            color="#008000"
             @click="guardar()"
             >GUARDAR DATOS</v-btn
           >
@@ -49,7 +50,7 @@
         <v-col cols="6">
           <v-btn
             block
-            color="#DDB1FF"
+            color="#FF0000"
             @click="cancelar()"
             >CANCELAR</v-btn
           >

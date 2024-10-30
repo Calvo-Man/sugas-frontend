@@ -1,5 +1,4 @@
 <script setup>
-import VerticalNavSectionTitle from '@/@layouts/components/VerticalNavSectionTitle.vue'
 import VerticalNavGroup from '@layouts/components/VerticalNavGroup.vue'
 import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
 </script>
@@ -59,11 +58,13 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     :item="{
       title: 'Resultado Aprendizaje',
       icon: 'ri-file-copy-line',
+      badgeClass: 'bg-error',
     }"
   >
     <VerticalNavLink
       :item="{
         title: 'Res. Aprendizaje',
+        badgeClass: 'bg-light-primary text-primary',
         to: '/sugas/resultado_aprendizaje',
       }"
     />
@@ -78,26 +79,40 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     <VerticalNavLink
       :item="{
         title: 'Cargar guia',
-        to: '/sugas/cargar_archivo',
+        to: 'cargar_archivo',
       }"
     />
   </VerticalNavGroup>
-
+  <VerticalNavGroup
+    :item="{
+      title: 'Gest. Usuarios',
+      icon: 'ri-file-copy-line',
+      badgeClass: 'bg-error',
+    }"
+  >
+    <VerticalNavLink
+      :item="{
+        title: 'Registrar usuario',
+        icon: 'ri-user-add-line',
+        to: 'registro_usuario',
+      }"
+    />
+    <VerticalNavLink
+      :item="{
+        title: 'Asignar Programa',
+        icon: 'ri-user-add-line',
+        to: 'asignar-programa',
+      }"
+    />
+  </VerticalNavGroup>
+  <!-- 
   <VerticalNavLink
     :item="{
       title: 'Account Settings',
       icon: 'ri-user-settings-line',
-      to: '/account-settings',
+      to: '/sugas/account-settings',
     }"
-  />
-
-  <VerticalNavLink
-    :item="{
-      title: 'Registrar Usuario',
-      icon: 'ri-login-box-line',
-      to: '/sugas/registro_usuario',
-    }"
-  />
+  /> -->
 
   <!-- 👉 Others -->
 </template>

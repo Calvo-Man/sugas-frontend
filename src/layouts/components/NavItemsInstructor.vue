@@ -26,7 +26,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     :item="{
       title: 'Account Settings',
       icon: 'ri-user-settings-line',
-      to: '/account-settings',
+      to: '/sugas/account-settings',
     }"
   />
 

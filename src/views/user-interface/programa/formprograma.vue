@@ -1,5 +1,8 @@
 <template>
-  <VCard title="REGISTRO DE PROGRAMAS">
+  <VCard
+    title="REGISTRO DE PROGRAMAS"
+    class="background-linear"
+  >
     <VCardText class="d-flex flex-column gap-y-8">
       <v-form
         ref="form"

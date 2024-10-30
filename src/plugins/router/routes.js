@@ -17,6 +17,38 @@ export const routes = [
     ],
   },
   {
+    path: '/validar',
+    name: 'EnviarCorreo',
+    component: () => import('@/layouts/blank.vue'),
+    redirect: 'validar/correo',
+    children: [
+      {
+        path: 'correo',
+        component: () => import('@/pages/recuperar-contrasena/pedirCorreo.vue'),
+      },
+    ],
+  },
+  {
+    path: '/cambio-contrasena/:cedula/:token',
+    name: 'RecuperarContrasena',
+    component: () => import('@/pages/recuperar-contrasena/recuperarContrasena.vue'),
+    props: true, // Esto permite pasar los parámetros como props al componente
+  },
+
+  {
+    path: '/auth',
+    name: 'CambioContrasena',
+    component: () => import('@/layouts/blank.vue'),
+    redirect: '/auth/cambiar-contrasena',
+    meta: { puede: true, requiresAuth: true },
+    children: [
+      {
+        path: 'cambiar-contrasena',
+        component: () => import('@/pages/recuperar-contrasena/cambioContrasena.vue'),
+      },
+    ],
+  },
+  {
     path: '/sugas',
     name: 'sugas',
     component: () => import('@/layouts/default.vue'),
@@ -43,6 +75,7 @@ export const routes = [
         meta: { requiresAdmin: true },
         component: () => import('@/pages/programacompetencia/programacompetencia.vue'),
       },
+
       {
         path: 'resultado_aprendizaje',
         meta: { requiresAdmin: true },
@@ -57,6 +90,16 @@ export const routes = [
         path: 'registro_usuario',
         meta: { requiresAdmin: true },
         component: () => import('@/pages/register.vue'),
+      },
+      {
+        path: 'account-settings',
+        meta: { requiresAdmin: false },
+        component: () => import('@/pages/account-settings.vue'),
+      },
+      {
+        path: 'asignar-programa',
+        meta: { requiresAdmin: true },
+        component: () => import('@/pages/usuarios/asignarProgramas.vue'),
       },
     ],
   },

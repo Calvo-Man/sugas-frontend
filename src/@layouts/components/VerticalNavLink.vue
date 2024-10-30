@@ -43,5 +43,12 @@ const props = defineProps({
     align-items: center;
     cursor: pointer;
   }
+  .nav-link a:hover {
+    color: rgb(43, 250, 1) !important;
+    // background: linear-gradient(to right, white 70%, rgb(79, 228, 79)) !important;
+  }
+  .nav-item-title {
+    color: rgb(84, 213, 84);
+  }
 }
 </style>

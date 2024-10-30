@@ -8,6 +8,7 @@
 
 body {
   .v-btn {
+    
     &:not(.v-btn--block) {
       min-inline-size: auto;
     }
@@ -39,7 +40,7 @@ body {
             &:hover,
             &:active,
             &:focus {
-              background-color: rgb(var(--v-theme-#{$color-name}-darken-1)) !important;
+              background-color: rgb(151, 158, 151) ;
             }
           }
         }
@@ -226,13 +227,13 @@ body {
         }
 
         .v-icon {
-          color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+          color: rgb(128, 128, 128);
           font-size: 24px;
         }
 
         &--active {
           .v-icon {
-            color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+            color: green;
           }
         }
       }

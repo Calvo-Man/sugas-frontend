@@ -12,6 +12,13 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const isAuthenticated = store.state.isAuthenticated
   const userRole = store.state.user?.rol || ''
+  const puede = store.state.puede || false
+
+  if (to.matched.some(record => record.meta.puede)) {
+    if (!puede) {
+      return next({ path: '/sugas' }) // Redirige a la ruta anterior si no puede
+    }
+  }
 
   // Si la ruta requiere autenticación
   if (to.matched.some(record => record.meta.requiresAuth)) {

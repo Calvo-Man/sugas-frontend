@@ -13,24 +13,34 @@
   </VCard>
 </template>
 <script>
+import store from '@/store'
 import axios from 'axios'
 export default {
   data() {
     return {
       items: [],
       programa: null,
+      id: store.state.user.id,
     }
   },
 
   methods: {},
   async mounted() {
-    const response = await axios.get('http://localhost:3000/programa/', {
-      headers: {
-        Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
-      },
-    })
-    this.items = response.data
-    console.log(this.items)
+    if (store.state.user.rol == 'admin') {
+      const response = await axios.get('http://localhost:3000/programa/', {
+        headers: {
+          Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+        },
+      })
+      this.items = response.data
+    } else {
+      const response = await axios.get(`http://localhost:3000/usuarios/${this.id}/programas-asignados`, {
+        headers: {
+          Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+        },
+      })
+      this.items = response.data
+    }
   },
 
   watch: {

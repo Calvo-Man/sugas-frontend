@@ -1,9 +1,6 @@
 <script setup>
-import logo from '@images/logo.svg?raw'
 import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
 import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
-import authV1Tree2 from '@images/pages/auth-v1-tree-2.png'
-import authV1Tree from '@images/pages/auth-v1-tree.png'
 import { useTheme } from 'vuetify'
 
 const form = ref({
@@ -34,17 +31,19 @@ const isPasswordVisible = ref(false)
           class="d-flex align-center gap-3"
         >
           <!-- eslint-disable vue/no-v-html -->
-          <div
-            class="d-flex"
-            v-html="logo"
-          />
-          <h2 class="font-weight-medium text-2xl text-uppercase">Materio</h2>
+          <div class="d-flex">
+            <img
+              src="../../../public/logo.png"
+              alt="Logo"
+              width="100"
+            />
+          </div>
+          <h2 class="font-weight-medium text-2xl text-uppercase">Sugas</h2>
         </RouterLink>
       </VCardItem>
 
       <VCardText class="pt-2">
-        <h4 class="text-h4 mb-1">Adventure starts here 🚀</h4>
-        <p class="mb-0">Make your app management easy and fun!</p>
+        <h4 class="text-h4 mb-1">Registro de usuarios</h4>
       </VCardText>
 
       <VCardText>
@@ -54,11 +53,13 @@ const isPasswordVisible = ref(false)
         >
           <VRow>
             <!-- Username -->
+
             <VCol cols="12">
               <VTextField
                 v-model="paquete.name"
                 label="Nombre"
                 type="text"
+                color="#2D882D"
               />
             </VCol>
             <!-- email -->
@@ -68,6 +69,7 @@ const isPasswordVisible = ref(false)
                 label="Email"
                 placeholder="johndoe@email.com"
                 type="email"
+                color="#2D882D"
               />
             </VCol>
 
@@ -77,6 +79,7 @@ const isPasswordVisible = ref(false)
                 v-model="paquete.cedula"
                 label="Cedula"
                 type="number"
+                color="#2D882D"
               />
             </VCol>
 
@@ -86,6 +89,7 @@ const isPasswordVisible = ref(false)
                 v-model="paquete.telefono"
                 label="Telefono"
                 type="number"
+                color="#2D882D"
               />
             </VCol>
             <!-- programas -->
@@ -99,6 +103,7 @@ const isPasswordVisible = ref(false)
                 :type="isPasswordVisible ? 'text' : 'password'"
                 :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
+                color="#2D882D"
               />
 
               <!-- rol -->
@@ -111,31 +116,15 @@ const isPasswordVisible = ref(false)
                   item-value="id"
                   required
                   class="mb-2"
+                  color="#2D882D"
                 ></v-select>
               </VCol>
-              <div class="d-flex align-center my-6">
-                <VCheckbox
-                  id="privacy-policy"
-                  v-moadel="form.privacyPolicies"
-                  inline
-                />
-                <VLabel
-                  for="privacy-policy"
-                  style="opacity: 1"
-                >
-                  <span class="me-1">I agree to</span>
-                  <a
-                    href="javascript:void(0)"
-                    class="text-primary"
-                    >privacy policy & terms</a
-                  >
-                </VLabel>
-              </div>
 
               <v-btn
                 block
                 @click="registrar"
                 type="submit"
+                color="#2D882D"
               >
                 Registrar
               </v-btn>
@@ -144,24 +133,6 @@ const isPasswordVisible = ref(false)
         </VForm>
       </VCardText>
     </VCard>
-
-    <VImg
-      class="auth-footer-start-tree d-none d-md-block"
-      :src="authV1Tree"
-      :width="250"
-    />
-
-    <VImg
-      :src="authV1Tree2"
-      class="auth-footer-end-tree d-none d-md-block"
-      :width="350"
-    />
-
-    <!-- bg img -->
-    <VImg
-      class="auth-footer-mask d-none d-md-block"
-      :src="authThemeMask"
-    />
   </div>
 </template>
 <script>
@@ -242,6 +213,13 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @use '@core/scss/template/pages/page-auth';
+.bg-primary {
+  background-color: green !important;
+  color: rgb(var(--v-theme-on-primary)) !important;
+}
+.text-primary {
+  color: green !important;
+}
 </style>

@@ -21,12 +21,11 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
       }"
     />
   </VerticalNavGroup>
-
   <VerticalNavLink
     :item="{
       title: 'Account Settings',
       icon: 'ri-user-settings-line',
-      to: '/account-settings',
+      to: '/sugas/account-settings',
     }"
   />
 
