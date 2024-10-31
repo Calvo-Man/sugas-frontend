@@ -1,5 +1,8 @@
 <template>
-  <VCard title="LISTADO  DE PROGRAMAS">
+  <VCard
+    title="LISTADO  DE PROGRAMAS"
+    class="background-linear"
+  >
     <template v-slot:text>
       <v-text-field
         v-model="search"

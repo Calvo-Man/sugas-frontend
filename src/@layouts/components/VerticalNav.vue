@@ -45,10 +45,9 @@ const handleNavScroll = evt => {
 <template>
   <!-- eslint-disable vue/no-v-html -->
   <Component
-    style="background-color: transparent"
     :is="props.tag"
     ref="refNav"
-    class="layout-vertical-nav"
+    class="layout-vertical-nav navbar-side-color"
     :class="[
       {
         visible: isOverlayNavActive,

@@ -48,7 +48,8 @@ const props = defineProps({
     // background: linear-gradient(to right, white 70%, rgb(79, 228, 79)) !important;
   }
   .nav-item-title {
-    color: rgb(84, 213, 84);
+    color: rgb(4, 4, 4);
+    //color: black;
   }
 }
 </style>
