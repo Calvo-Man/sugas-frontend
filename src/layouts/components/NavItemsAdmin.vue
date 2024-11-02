@@ -51,6 +51,13 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
         to: '/sugas/programacompetencia',
       }"
     />
+    <VerticalNavLink
+      :item="{
+        title: 'Ver asociaciones',
+        badgeClass: 'bg-light-primary text-primary',
+        to: '/sugas/ver_asociacion',
+      }"
+    />
   </VerticalNavGroup>
 
   <!-- 👉 Front Pages -->

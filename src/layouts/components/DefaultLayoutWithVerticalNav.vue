@@ -51,7 +51,8 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
           <img
             src="../../../public/logo.png"
             alt="Logo"
-            width="210"
+            width="200"
+            height="160"
           />
         </div>
         <!-- eslint-enable -->

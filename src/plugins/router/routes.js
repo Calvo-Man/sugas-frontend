@@ -77,6 +77,12 @@ export const routes = [
       },
 
       {
+        path: 'ver_asociacion',
+        meta: { requiresAdmin: true },
+        component: () => import('@/pages/programacompetencia/verAsociacion.vue'),
+      },
+
+      {
         path: 'resultado_aprendizaje',
         meta: { requiresAdmin: true },
         component: () => import('@/pages/ResultadoAprendizaje/resultadoaprendizaje.vue'),

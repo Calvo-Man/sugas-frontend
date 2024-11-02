@@ -17,7 +17,7 @@
       item-title="nombre"
       item-value="id"
       class="mx-auto w-50"
-      @update:model-value="fetchCompetenciasPorPrograma"
+      @update:model-value="fechtInstructoresPorPrograma"
     ></v-select>
     <VCardText class="d-flex flex-column gap-y-8">
       <v-data-table
@@ -45,14 +45,15 @@
           >
             <v-icon icon="ri-delete-bin-line"></v-icon>
           </v-btn>
+          <ConfirmationDialog
+            :active="show"
+            :codigo="codigo"
+            mensaje="El instructor "
+            @cerrarconfirmation="cerrar"
+            @procesar="deleteInstructor"
+          />
         </template>
       </v-data-table>
-      <ConfirmationDialog
-        :active="show"
-        :codigo="codigo"
-        @cerrarconfirmation="cerrar"
-        @procesar="deleteProgram"
-      />
     </VCardText>
   </VCard>
 </template>
@@ -75,6 +76,7 @@ export default {
       competencias: [],
       show: false,
       codigo: null,
+      mensaje: null,
     }
   },
   computed: {
@@ -101,12 +103,12 @@ export default {
     },
   },
   async mounted() {
-    this.fetchCompetenciasPorPrograma()
+    this.fechtInstructoresPorPrograma()
 
     this.fetchProgramas()
   },
   methods: {
-    async fetchCompetenciasPorPrograma() {
+    async fechtInstructoresPorPrograma() {
       if (this.programaSelected) {
         try {
           const response = await axios.get(`http://localhost:3000/programa/${this.programaSelected}/instructores`, {
@@ -155,31 +157,36 @@ export default {
       this.$emit('editar', item)
     },
 
-    predelete(codigo) {
+    predelete(id) {
       this.show = true
-      this.codigo = codigo
+      this.codigo = id
     },
 
     cerrar() {
       this.show = false
     },
 
-    async deleteProgram(codigo) {
+    async deleteInstructor(codigo) {
       console.log(codigo)
       const response = await axios.delete(
-        `http://localhost:3000/programas-instructor/programa/${this.programaSelected}/instructor/`,
+        `http://localhost:3000/programas-instructor/programa/${this.programaSelected}/instructor/${codigo}`,
+        {
+          headers: {
+            Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+          },
+        },
       )
       this.$notify({ text: 'Programa eliminado con éxito...', type: 'success' })
       this.show = false
       this.codigo = null
-      this.fetchCompetenciasPorPrograma()
+      this.fechtInstructoresPorPrograma()
     },
   },
 
   watch: {
     estado(newValue) {
       if (newValue) {
-        this.fetchCompetenciasPorPrograma()
+        this.fechtInstructoresPorPrograma()
       }
     },
   },

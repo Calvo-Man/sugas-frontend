@@ -41,7 +41,7 @@
           <v-btn
             color="error"
             icon
-            @click="predelete(item.id)"
+            @click="predelete(item.codigo)"
           >
             <v-icon icon="ri-delete-bin-line"></v-icon>
           </v-btn>
@@ -50,6 +50,7 @@
       <ConfirmationDialog
         :active="show"
         :codigo="codigo"
+        mensaje="La competencia "
         @cerrarconfirmation="cerrar"
         @procesar="deleteProgram"
       />
@@ -171,7 +172,12 @@ export default {
     async deleteProgram(codigo) {
       console.log(codigo)
       const response = await axios.delete(
-        `http://localhost:3000/programa-competencias/${this.programaSelected}/competencia/${this.codigo}`,
+        `http://localhost:3000/programacompetencia/${this.programaSelected}/competencia/${this.codigo}`,
+        {
+          headers: {
+            Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+          },
+        },
       )
       this.$notify({ text: 'Programa eliminado con éxito...', type: 'success' })
       this.show = false
