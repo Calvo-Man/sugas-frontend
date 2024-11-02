@@ -18,7 +18,7 @@ const isPasswordVisible = ref(false)
 </script>
 
 <template>
-  <div class="auth-wrapper d-flex align-center justify-center pa-4">
+  <div class="auth-wrapper d-flex align-center justify-center pa-4 mt-xl-10">
     <VCard
       class="auth-card pa-4 pt-7"
       max-width="448"
@@ -143,11 +143,11 @@ export default {
         this.$router.push({ path: '/sugas' })
       } catch (error) {
         if (error.response.data.message === 'Incorrect password') {
-          this.$notify({ text: 'Contraseña incorrecta', type: 'error' })
-          //this.passwordError = 'Contraseña incorrecta'
+          //this.$notify({ text: 'Contraseña incorrecta', type: 'error' })
+          this.passwordError = 'Contraseña incorrecta'
         } else if (error.response.data.message === 'Invalid credentials') {
-          this.$notify({ text: 'El usuario no existe', type: 'error' })
-          //this.passwordError = 'El usuario no existe'
+          //this.$notify({ text: 'El usuario no existe', type: 'error' })
+          this.passwordError = 'El usuario no existe'
         } else if (error.request) {
           //  console.error('Sin respuesta del servidor:', error.request)
         } else {

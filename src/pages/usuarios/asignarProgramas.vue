@@ -10,11 +10,11 @@
       </VCol>
 
       <VCol cols="12">
-        <ListarProgramaCompetencia
+        <ListarProgramaInstructor
           :estado="estado"
           @plistado="actualizarestado"
           @editar="editar"
-        ></ListarProgramaCompetencia>
+        ></ListarProgramaInstructor>
       </VCol>
     </VRow>
   </div>
@@ -22,10 +22,11 @@
 
 <script>
 import ListarProgramaCompetencia from '@/views/user-interface/programa/listarProgramaCompetencia.vue'
+import ListarProgramaInstructor from '@/views/user-interface/programa/listarProgramaInstructor.vue'
 import AsignarProgramas from '@/views/user-interface/usuarios/asignarProgramas.vue'
 
 export default {
-  components: { ListarProgramaCompetencia, AsignarProgramas },
+  components: { ListarProgramaCompetencia, ListarProgramaInstructor, AsignarProgramas },
   data() {
     return {
       estado: false,

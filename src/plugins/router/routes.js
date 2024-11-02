@@ -83,7 +83,7 @@ export const routes = [
       },
       {
         path: 'cargar_archivo',
-        meta: { requiresAdmin: false },
+        meta: { requiresAdmin: true },
         component: () => import('@/pages/archivo/archivocarga.vue'),
       },
       {

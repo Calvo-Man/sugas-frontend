@@ -17,6 +17,13 @@
           class="mb-2"
         ></v-text-field>
 
+        <p
+          v-if="mensaje_error_codigo"
+          style="color: red"
+        >
+          {{ mensaje_error_codigo }}
+        </p>
+
         <v-text-field
           v-model="paquete.nombre"
           label="Nombre"
@@ -25,8 +32,15 @@
           class="mb-2"
         ></v-text-field>
 
+        <p
+          v-if="mensaje_error_nombre"
+          style="color: red"
+        >
+          {{ mensaje_error_nombre }}
+        </p>
+
         <v-text-field
-          v-model="paquete.version"
+          v-model.number="paquete.version"
           label="Version"
           type="number"
           :rules="[rules.required]"
@@ -77,6 +91,8 @@ export default {
       },
       id: null,
       dialog: false,
+      mensaje_error_codigo: null,
+      mensaje_error_nombre: null,
       rules: {
         required: value => !!value || 'Este campo es obligatorio.',
       },
@@ -86,6 +102,8 @@ export default {
   methods: {
     async guardar() {
       if (this.$refs.form.validate()) {
+        this.mensaje_error_codigo = null
+        this.mensaje_error_nombre = null
         try {
           this.dialog = true
           const response = await axios.post('http://localhost:3000/programa/CrearPrograma', this.paquete, {
@@ -94,13 +112,21 @@ export default {
             },
           })
 
-          console.log(response.data) // Suponiendo que la respuesta incluye un mensaje.
-          this.$notify({ text: 'Programa guardado con éxito...', type: 'success' }) // Cambia el tipo según sea necesario);
+          if (!response.data.success) {
+            response.data.column === 'codigo'
+              ? (this.mensaje_error_codigo = 'Ya existe un programa con este código')
+              : (this.mensaje_error_nombre = 'Ya existe un programa con este nombre')
+          } else {
+            this.$notify({ text: response.data.message, type: response.data.type }) // Cambia el tipo según sea necesario);
+          }
           this.resetForm()
           this.$emit('pguardar')
           this.dialog = false
         } catch (error) {
-          console.error('Error al enviar datos:', error)
+          //console.error('Error al enviar datos:', error.response.data.statusCode)
+          if (error.response.data.statusCode === 409) {
+            return this.$notify({ text: 'El programa ya existe', type: 'error' })
+          }
         }
 
         this.resetForm()

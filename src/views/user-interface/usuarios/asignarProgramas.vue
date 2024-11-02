@@ -27,7 +27,6 @@
           :rules="[rules.required]"
           required
           :disabled="!paquete.instructor"
-          :item-disabled="competencia => competenciaDeshabilitada(competencia)"
           class="mb-2"
         ></v-select>
 
