@@ -36,7 +36,7 @@ const isPasswordVisible = ref(false)
       </VCardItem>
 
       <VCardText class="pt-2">
-        <h4 class="text-h4 mb-1">Welcome to Sugaas! 👋🏻</h4>
+        <h4 class="text-h4 mb-1">Bienvenido a Sugaas! 👋🏻</h4>
         <p class="mb-0">Le enviaremos un correo para restablecer su contrasena</p>
       </VCardText>
 
@@ -52,18 +52,22 @@ const isPasswordVisible = ref(false)
               <v-text-field
                 v-model="email"
                 :rules="emailRules"
-                label="Email"
+                label="Correo"
                 placeholder="example@example.com"
                 autocomplete="email"
               />
             </VCol>
 
             <VCol cols="12">
-              <!-- enviar button -->
+              <!-- enviar button 
+               VERDE: color="#5cb85c"
+               AZUL: color="#0090A5"
+               -->
               <VBtn
                 block
                 type="submit"
                 @click="Enviar"
+                color="#0090A5"
               >
                 Enviar
               </VBtn>

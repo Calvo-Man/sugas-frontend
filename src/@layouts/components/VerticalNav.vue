@@ -171,6 +171,11 @@ const handleNavScroll = evt => {
   }
 }
 
+.layout-nav-type-vertical .layout-vertical-nav .nav-link > .router-link-exact-active {
+    background: linear-gradient(-72.47deg, rgb(var(--v-theme-primary)) 22.16%, rgba(var(--v-theme-primary), 0.7) 76.47%) !important;
+    box-shadow: 0 3px 6px 0 rgba(var(--v-shadow-key-umbra-color), var(--v-shadow-sm-opacity)), 0 0 transparent, 0 0 transparent;
+}
+
 // Small screen vertical nav transition
 @media (max-width: 1279px) {
   .layout-vertical-nav {

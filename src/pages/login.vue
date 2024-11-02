@@ -29,15 +29,14 @@ const isPasswordVisible = ref(false)
           <img
             src="../../../public/logo.png"
             alt="Logo"
-            width="100"
+            width="150"
           />
         </div>
-        <h2 class="font-weight-medium text-2xl text-uppercase">Sugaas</h2>
       </VCardItem>
 
       <VCardText class="pt-2">
-        <h4 class="text-h4 mb-1">Welcome to Sugaas! 👋🏻</h4>
-        <p class="mb-0">Please sign-in to your account and start the adventure</p>
+        <h4 class="text-h4 mb-1">Bienvenido a SUGA! 👋🏻</h4>
+        <p class="mb-0">Inicia sesión con tus credenciales.</p>
       </VCardText>
 
       <VCardText>
@@ -52,7 +51,7 @@ const isPasswordVisible = ref(false)
               <v-text-field
                 v-model="email"
                 :rules="emailRules"
-                label="Email"
+                label="correo"
                 placeholder="example@example.com"
                 autocomplete="email"
               />
@@ -62,7 +61,7 @@ const isPasswordVisible = ref(false)
             <VCol cols="12">
               <v-text-field
                 v-model="password"
-                label="Password"
+                label="contraseña"
                 :rules="passwordRules"
                 placeholder="············"
                 :type="isPasswordVisible ? 'text' : 'password'"
@@ -74,14 +73,14 @@ const isPasswordVisible = ref(false)
               <div class="d-flex align-center justify-space-between flex-wrap my-6">
                 <VCheckbox
                   v-model="form.remember"
-                  label="Remember me"
+                  label="Recordar"
                 />
 
                 <a
                   class="text-primary"
                   href="/validar"
                 >
-                  Forgot Password?
+                  ¿Has olvidado tu contraseña?
                 </a>
               </div>
 
@@ -90,8 +89,9 @@ const isPasswordVisible = ref(false)
                 block
                 type="submit"
                 @click="login"
+                color="#5cb85c"
               >
-                Login
+                Iniciar sesion
               </VBtn>
             </VCol>
           </VRow>

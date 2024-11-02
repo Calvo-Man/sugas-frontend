@@ -23,7 +23,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
   </VerticalNavGroup>
   <VerticalNavLink
     :item="{
-      title: 'Account Settings',
+      title: 'Configuración',
       icon: 'ri-user-settings-line',
       to: '/sugas/account-settings',
     }"

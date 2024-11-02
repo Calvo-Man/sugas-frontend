@@ -37,14 +37,6 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
 
         <VSpacer />
 
-        <IconBtn
-          href="https://github.com/Calvo-Man/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <VIcon icon="ri-github-fill" />
-        </IconBtn>
-
         <UserProfile />
       </div>
     </template>
@@ -59,12 +51,12 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
           <img
             src="../../../public/logo.png"
             alt="Logo"
-            width="100"
+            width="210"
           />
         </div>
         <!-- eslint-enable -->
 
-        <h1 class="font-weight-medium leading-normal text-xl text-uppercase">SUGAS</h1>
+        <!-- <h1 class="font-weight-medium leading-normal text-xl text-uppercase">SUGA</h1> -->
       </RouterLink>
 
       <IconBtn
