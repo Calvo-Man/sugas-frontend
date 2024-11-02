@@ -86,6 +86,7 @@ const isPasswordVisible = ref(false)
                 block
                 type="submit"
                 :disabled="!puede"
+                color="#5cb85c"
               >
                 Cambiar contraseña
               </VBtn>

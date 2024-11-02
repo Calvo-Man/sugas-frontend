@@ -18,7 +18,7 @@
           <v-btn
             block
             @click="openWidget"
-            color="#008000"
+            color="#5cb85c"
             >Subir Archivo</v-btn
           >
         </v-col>
@@ -42,7 +42,7 @@
         <v-col cols="6">
           <v-btn
             block
-            color="#008000"
+            color="#5cb85c"
             @click="guardar()"
             >GUARDAR DATOS</v-btn
           >
@@ -50,7 +50,7 @@
         <v-col cols="6">
           <v-btn
             block
-            color="#FF0000"
+            color="#e11616"
             @click="cancelar()"
             >CANCELAR</v-btn
           >

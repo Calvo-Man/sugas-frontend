@@ -34,14 +34,14 @@
           v-if="!item"
           class="mt-3"
           @click="guardar()"
-          color="primary"
+          color="#5cb85c"
           >Guardar</v-btn
         >
         <v-btn
           v-if="item"
           class="mt-3"
           @click="editar()"
-          color="primary"
+          color="#5cb85c"
           >Editar</v-btn
         >
       </v-form>

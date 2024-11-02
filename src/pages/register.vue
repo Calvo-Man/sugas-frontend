@@ -35,10 +35,10 @@ const isPasswordVisible = ref(false)
             <img
               src="../../../public/logo.png"
               alt="Logo"
-              width="100"
+              width="120"
             />
           </div>
-          <h2 class="font-weight-medium text-2xl text-uppercase">Sugas</h2>
+          <!-- <h2 class="font-weight-medium text-2xl text-uppercase">Sugas</h2> -->
         </RouterLink>
       </VCardItem>
 
@@ -124,7 +124,7 @@ const isPasswordVisible = ref(false)
                 block
                 @click="registrar"
                 type="submit"
-                color="#2D882D"
+                color="#5cb85c"
               >
                 Registrar
               </v-btn>

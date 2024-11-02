@@ -25,6 +25,7 @@
             <VCardActions>
               <v-btn
                 block="true"
+                color="#5cb85c"
                 @click="guardar()"
               >
                 GUARDAR

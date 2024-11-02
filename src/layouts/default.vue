@@ -12,10 +12,11 @@ import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVertical
 // As we are using `layouts` plugin we need its styles to be imported
 @use '@layouts/styles/default-layout';
 .background-linear {
-  //background-image: linear-gradient(to left, rgb(246, 250, 248) 40%, rgb(79, 228, 79)) !important;
-  background: rgb(79, 228, 79) !important;
+  background: rgb(245, 245, 245) !important;
+
+  // Color verde sofia plus rgb(94, 179, 25)
 }
 .navbar-side-color {
-  background: linear-gradient(to left, transparent 10%, rgb(79, 228, 79)) !important;
+  background: rgb(219, 218, 218) !important;
 }
 </style>
