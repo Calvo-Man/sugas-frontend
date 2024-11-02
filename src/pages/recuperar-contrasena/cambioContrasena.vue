@@ -72,12 +72,14 @@ const isPasswordVisible = ref(false)
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
               />
               <!-- Mensaje de error si las contraseñas no coinciden -->
-              <VCol
-                cols="12"
+
+              <p
                 v-if="passwordError"
+                style="color: red"
               >
-                <p style="color: red">{{ passwordError }}</p>
-              </VCol>
+                {{ passwordError }}
+              </p>
+
               <!-- remember me checkbox -->
               <div class="d-flex align-center justify-space-between flex-wrap my-6"></div>
 

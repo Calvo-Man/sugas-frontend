@@ -56,11 +56,6 @@ export const routes = [
     redirect: 'sugas/cargar_archivo',
     children: [
       {
-        path: 'dashboard',
-        component: () => import('@/pages/dashboard.vue'),
-      },
-
-      {
         path: 'programa',
         meta: { requiresAdmin: true },
         component: () => import('@/pages/programa/programa.vue'),
@@ -89,7 +84,7 @@ export const routes = [
       },
       {
         path: 'cargar_archivo',
-        meta: { requiresAdmin: true },
+
         component: () => import('@/pages/archivo/archivocarga.vue'),
       },
       {

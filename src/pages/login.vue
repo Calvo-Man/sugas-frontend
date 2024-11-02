@@ -56,6 +56,12 @@ const isPasswordVisible = ref(false)
                 autocomplete="email"
               />
             </VCol>
+            <p
+              v-if="emailError"
+              style="color: red"
+            >
+              {{ emailError }}
+            </p>
 
             <!-- password -->
             <VCol cols="12">
@@ -68,7 +74,12 @@ const isPasswordVisible = ref(false)
                 :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
               />
-
+              <p
+                v-if="passwordError"
+                style="color: red"
+              >
+                {{ passwordError }}
+              </p>
               <!-- remember me checkbox -->
               <div class="d-flex align-center justify-space-between flex-wrap my-6">
                 <VCheckbox
@@ -115,6 +126,8 @@ export default {
       value => /.+@.+\..+/.test(value) || 'E-mail must be valid.',
     ],
     password: '',
+    passwordError: '',
+    emailError: '',
     passwordRules: [
       value => !!value || 'Password is required.',
       // Agregar más reglas según sea necesario
@@ -147,7 +160,7 @@ export default {
           this.passwordError = 'Contraseña incorrecta'
         } else if (error.response.data.message === 'Invalid credentials') {
           //this.$notify({ text: 'El usuario no existe', type: 'error' })
-          this.passwordError = 'El usuario no existe'
+          this.emailError = 'El usuario no existe'
         } else if (error.request) {
           //  console.error('Sin respuesta del servidor:', error.request)
         } else {
