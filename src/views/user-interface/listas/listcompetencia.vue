@@ -1,6 +1,9 @@
 <template>
   <v-row>
-    <v-col cols="12">
+    <v-col
+      cols="8"
+      class="mx-auto"
+    >
       <VCard>
         <VCardText class="d-flex flex-column gap-y-8">
           <v-select

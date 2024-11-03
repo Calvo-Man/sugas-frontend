@@ -1,5 +1,4 @@
 <script setup>
-import logo from '@images/logo.svg?raw'
 import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
 import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
 import { defineProps } from 'vue'
@@ -26,11 +25,11 @@ const isPasswordVisible = ref(false)
     >
       <VCardItem class="justify-center">
         <!-- eslint-disable vue/no-v-html -->
-        <div
-          class="d-flex"
-          v-html="logo"
+        <img
+          src="../../../public/logo.png"
+          alt="Logo"
+          width="150"
         />
-        <h2 class="font-weight-medium text-2xl text-uppercase">Sugaas</h2>
       </VCardItem>
 
       <VCardText class="pt-2">

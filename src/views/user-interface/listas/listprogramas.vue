@@ -1,16 +1,23 @@
 <template>
-  <VCard>
-    <VCardText class="d-flex flex-column gap-y-8">
-      <v-select
-        v-model="programa"
-        :items="items"
-        item-value="id"
-        item-title="nombre"
-        label="Selecciona un programa"
-        return-object
-      ></v-select>
-    </VCardText>
-  </VCard>
+  <v-row>
+    <v-col
+      cols="8"
+      class="mx-auto"
+    >
+      <VCard>
+        <VCardText class="d-flex flex-column gap-y-8">
+          <v-select
+            v-model="programa"
+            :items="items"
+            item-value="id"
+            item-title="nombre"
+            label="Selecciona un programa"
+            return-object
+          ></v-select>
+        </VCardText>
+      </VCard>
+    </v-col>
+  </v-row>
 </template>
 <script>
 import store from '@/store'

@@ -1,7 +1,10 @@
 <template>
   <div>
     <VRow>
-      <VCol cols="12">
+      <VCol
+        cols="10"
+        class="mx-auto"
+      >
         <AsignarProgramas
           @guardarc="actualizarestado"
           :item="competencia"
@@ -9,7 +12,10 @@
         ></AsignarProgramas>
       </VCol>
 
-      <VCol cols="12">
+      <VCol
+        cols="10"
+        class="mx-auto"
+      >
         <ListarProgramaInstructor
           :estado="estado"
           @plistado="actualizarestado"

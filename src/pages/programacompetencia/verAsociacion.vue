@@ -1,5 +1,12 @@
 <template>
-  <ListarProgramaCompetencia />
+  <v-row>
+    <v-col
+      cols="9"
+      class="mx-auto"
+    >
+      <ListarProgramaCompetencia />
+    </v-col>
+  </v-row>
 </template>
 
 <script>

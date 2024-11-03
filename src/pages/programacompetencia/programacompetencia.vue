@@ -9,6 +9,7 @@
         :limpiar="limpiar"
       ></listcompetencia>
     </v-col>
+
     <v-col cols="12">
       <v-row>
         <v-col cols="6">

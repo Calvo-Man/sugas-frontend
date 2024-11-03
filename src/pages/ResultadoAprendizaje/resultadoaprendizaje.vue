@@ -3,7 +3,10 @@
     <v-col cols="12">
       <listprograma @selprograma="gprograma"></listprograma>
     </v-col>
-    <v-col cols="12">
+    <v-col
+      cols="8"
+      class="mx-auto"
+    >
       <VCard>
         <VCardText class="d-flex flex-column gap-y-8">
           <v-select
@@ -16,7 +19,10 @@
         </VCardText>
       </VCard>
     </v-col>
-    <v-col cols="12">
+    <v-col
+      cols="8"
+      class="mx-auto"
+    >
       <VCard title="REGISTRO DE RESULTADO DE APRENDIZAJE">
         <VCardText class="d-flex flex-column gap-y-8">
           <v-form
@@ -60,7 +66,10 @@
         </VCardText>
       </VCard>
     </v-col>
-    <v-col cols="12">
+    <v-col
+      cols="8"
+      class="mx-auto"
+    >
       <listadoresultado
         :estado="estado"
         :programa="programa"

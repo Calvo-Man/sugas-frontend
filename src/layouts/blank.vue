@@ -8,4 +8,9 @@
 .layout-wrapper.layout-blank {
   flex-direction: column;
 }
+@media screen and (min-width: 1367px) {
+  .layout-wrapper.layout-blank {
+    padding: 4rem;
+  }
+}
 </style>

@@ -14,46 +14,49 @@
     ></listresult>
     <div v-if="userRole === 'admin' || userRole === 'coordinador'">
       <v-row>
-        <v-col cols="12">
+        <v-col
+          cols="8"
+          class="mx-auto"
+        >
           <v-btn
             block
             @click="openWidget"
             color="#5cb85c"
             >Subir Archivo</v-btn
           >
-        </v-col>
-      </v-row>
 
-      <v-table theme="white">
-        <thead>
-          <tr>
-            <th class="text-left">Nombre</th>
-            <th class="text-left">Tamaño Kb</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ this.paquete.name }}</td>
-            <td>{{ this.paquete.tamano }}</td>
-          </tr>
-        </tbody>
-      </v-table>
-      <v-row class="mt-3">
-        <v-col cols="6">
-          <v-btn
-            block
-            color="#5cb85c"
-            @click="guardar()"
-            >GUARDAR DATOS</v-btn
-          >
-        </v-col>
-        <v-col cols="6">
-          <v-btn
-            block
-            color="#e11616"
-            @click="cancelar()"
-            >CANCELAR</v-btn
-          >
+          <v-table theme="white">
+            <thead>
+              <tr>
+                <th class="text-left">Nombre</th>
+                <th class="text-left">Tamaño Kb</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ this.paquete.name }}</td>
+                <td>{{ this.paquete.tamano }}</td>
+              </tr>
+            </tbody>
+          </v-table>
+          <v-row class="mt-3">
+            <v-col cols="6">
+              <v-btn
+                block
+                color="#5cb85c"
+                @click="guardar()"
+                >GUARDAR DATOS</v-btn
+              >
+            </v-col>
+            <v-col cols="6">
+              <v-btn
+                block
+                color="#e11616"
+                @click="cancelar()"
+                >CANCELAR</v-btn
+              >
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </div>

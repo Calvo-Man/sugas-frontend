@@ -18,7 +18,7 @@ const isPasswordVisible = ref(false)
 </script>
 
 <template>
-  <div class="auth-wrapper d-flex align-center justify-center pa-4 mt-xl-10">
+  <div class="auth-wrapper d-flex align-center justify-center pa-4">
     <VCard
       class="auth-card pa-4 pt-7"
       max-width="448"
@@ -51,7 +51,7 @@ const isPasswordVisible = ref(false)
               <v-text-field
                 v-model="email"
                 :rules="emailRules"
-                label="correo"
+                label="Correo"
                 placeholder="example@example.com"
                 autocomplete="email"
               />
@@ -67,7 +67,7 @@ const isPasswordVisible = ref(false)
             <VCol cols="12">
               <v-text-field
                 v-model="password"
-                label="contraseña"
+                label="Contraseña"
                 :rules="passwordRules"
                 placeholder="············"
                 :type="isPasswordVisible ? 'text' : 'password'"
