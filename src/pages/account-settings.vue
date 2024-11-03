@@ -1,6 +1,6 @@
 <script setup>
-import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
-import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
+// import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
+// import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
 import { useTheme } from 'vuetify'
 
 const vuetifyTheme = useTheme()
