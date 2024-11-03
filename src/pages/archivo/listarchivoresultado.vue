@@ -1,54 +1,61 @@
 <template>
-  <VCard title="LISTADO  DE ARCHIVOS">
-    <template v-slot:text>
-      <v-text-field
-        v-model="search"
-        label="Search"
-        prepend-inner-icon="ri-search-2-line"
-        variant="outlined"
-        hide-details
-        single-line
-      ></v-text-field>
-    </template>
-    <VCardText class="d-flex flex-column gap-y-8">
-      <v-data-table
-        :headers="headers"
-        :items="archivos"
-        items-per-page="5"
-        :search="search"
-      >
-        <template #item.actions="{ item }">
-          <v-btn
-            v-if="!userRole === 'instructor'"
-            color="error"
-            icon
-            @click="predelete(item)"
-          >
-            <v-icon icon="ri-delete-bin-line"></v-icon>
-          </v-btn>
-          <v-btn
-            class="ml-2"
-            color="#2D882D"
-            icon
-            :href="item.url"
-            target="_blank"
-          >
-            <v-icon
-              icon="ri-eye-line"
-              color="white"
-            ></v-icon>
-          </v-btn>
+  <v-row>
+    <v-col
+      cols="9"
+      class="mx-auto"
+    >
+      <VCard title="LISTADO  DE ARCHIVOS">
+        <template v-slot:text>
+          <v-text-field
+            v-model="search"
+            label="Search"
+            prepend-inner-icon="ri-search-2-line"
+            variant="outlined"
+            hide-details
+            single-line
+          ></v-text-field>
         </template>
-      </v-data-table>
-    </VCardText>
-    <ConfirmationDialog
-      :active="show"
-      :codigo="id"
-      mensaje="Guia de aprendizaje"
-      @cerrarconfirmation="cerrar"
-      @procesar="deleteArchivo"
-    />
-  </VCard>
+        <VCardText class="d-flex flex-column gap-y-8">
+          <v-data-table
+            :headers="headers"
+            :items="archivos"
+            items-per-page="5"
+            :search="search"
+          >
+            <template #item.actions="{ item }">
+              <v-btn
+                v-if="!userRole === 'instructor'"
+                color="error"
+                icon
+                @click="predelete(item)"
+              >
+                <v-icon icon="ri-delete-bin-line"></v-icon>
+              </v-btn>
+              <v-btn
+                class="ml-2"
+                color="#2D882D"
+                icon
+                :href="item.url"
+                target="_blank"
+              >
+                <v-icon
+                  icon="ri-eye-line"
+                  color="white"
+                ></v-icon>
+              </v-btn>
+            </template>
+          </v-data-table>
+        </VCardText>
+        <ConfirmationDialog
+          :active="show"
+          :codigo="id"
+          mensaje="Guia de aprendizaje"
+          @cerrarconfirmation="cerrar"
+          @procesar="deleteArchivo"
+        />
+      </VCard>
+    </v-col>
+  </v-row>
 </template>
 <script>
 import ConfirmationDialog from '@/components/ConfirmationDialog.vue'

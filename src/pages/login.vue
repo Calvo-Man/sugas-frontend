@@ -51,7 +51,7 @@ const isPasswordVisible = ref(false)
               <v-text-field
                 v-model="email"
                 :rules="emailRules"
-                label="Correo"
+                label="Correo electronico"
                 placeholder="example@example.com"
                 autocomplete="email"
               />

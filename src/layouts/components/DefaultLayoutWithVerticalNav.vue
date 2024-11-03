@@ -10,8 +10,11 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
 <template>
   <VerticalNavLayout>
     <!-- 👉 navbar -->
-    <template #navbar="{ toggleVerticalOverlayNavActive }">
-      <div class="d-flex h-100 align-center">
+    <template
+      #navbar="{ toggleVerticalOverlayNavActive }"
+      class="position-sticky"
+    >
+      <div class="d-flex h-100 align-center position-sticky">
         <!-- 👉 Vertical nav toggle in overlay mode -->
         <IconBtn
           class="ms-n3 d-lg-none"
@@ -22,7 +25,7 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
 
         <!-- 👉 Search -->
         <div
-          class="d-flex align-center cursor-pointer"
+          class="d-flex align-center cursor-pointer position-relative ms-6"
           style="user-select: none"
         >
           <!-- 👉 Search Trigger button -->
@@ -30,8 +33,14 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
             <VIcon icon="ri-search-line" />
           </IconBtn> -->
 
-          <span class="d-none d-md-flex align-center text-disabled">
-            <span class="me-3">Poner algo para llenar este espacio</span>
+          <span class="app-logo">
+            <img
+              src="../../../public/logo-sena-azul.png"
+              alt="Logo sena"
+              width="50"
+              height="50"
+            />
+            <span class="app-logo-title">Sistema único de guias de aprendizaje</span>
           </span>
         </div>
 
@@ -51,8 +60,8 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
           <img
             src="../../../public/logo.png"
             alt="Logo"
-            width="200"
-            height="160"
+            width="180"
+            height="130"
           />
         </div>
         <!-- eslint-enable -->
@@ -112,10 +121,13 @@ export default {
   column-gap: 0.75rem;
 
   .app-logo-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.75rem;
     text-transform: uppercase;
   }
+}
+.position-sticky {
+  position: sticky !important;
 }
 </style>

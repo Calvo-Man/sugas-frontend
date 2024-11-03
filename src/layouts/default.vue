@@ -3,7 +3,7 @@ import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVertical
 </script>
 
 <template>
-  <DefaultLayoutWithVerticalNav>
+  <DefaultLayoutWithVerticalNav class="app-color">
     <RouterView />
   </DefaultLayoutWithVerticalNav>
 </template>
@@ -18,5 +18,17 @@ import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVertical
 }
 .navbar-side-color {
   background: rgb(219, 218, 218) !important;
+}
+.app-color {
+  background: rgb(245, 248, 245) !important;
+}
+@media screen and (min-width: 1280px) {
+  .app-color {
+    background-image: url('./../public/logo-sena-azul.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: 65% 60% !important;
+    background-attachment: fixed !important;
+    background-size: 40% !important;
+  }
 }
 </style>
