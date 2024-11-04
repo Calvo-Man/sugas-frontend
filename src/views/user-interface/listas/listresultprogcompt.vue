@@ -12,6 +12,7 @@
             item-title="nombre"
             return-object
             label="Selecciona resultado de aprendizaje"
+            no-data-text="No hay resultados de aprendizaje disponibles"
           ></v-select>
         </VCardText>
       </VCard>

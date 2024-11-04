@@ -12,6 +12,7 @@
             item-value="id"
             item-title="nombre"
             label="Selecciona un programa"
+            no-data-text="El usuario no tiene programas asignados"
             return-object
           ></v-select>
         </VCardText>

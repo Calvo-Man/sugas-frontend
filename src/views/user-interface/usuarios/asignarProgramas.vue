@@ -14,6 +14,7 @@
           :rules="[rules.required]"
           required
           class="mb-2"
+          no-data-text="No hay instructores disponibles"
           @update:model-value="fetchProgramasNoAsignados"
         ></v-select>
 
@@ -27,6 +28,7 @@
           :rules="[rules.required]"
           required
           :disabled="!paquete.instructor"
+          no-data-text="No hay programas disponibles por asignar"
           class="mb-2"
         ></v-select>
 

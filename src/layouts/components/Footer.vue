@@ -4,7 +4,7 @@
     <span class="d-flex align-center">
       &copy;
       {{ new Date().getFullYear() }}
-      Desarrollador por ADSO 2670667
+      Desarrollado por ADSO 2670667
     </span>
   </div>
 </template>

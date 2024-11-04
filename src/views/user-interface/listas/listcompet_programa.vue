@@ -12,6 +12,7 @@
             item-title="nombre"
             return-object
             label="Selecciona una competencia"
+            no-data-text="No hay competencias disponibles"
           ></v-select>
         </VCardText>
       </VCard>

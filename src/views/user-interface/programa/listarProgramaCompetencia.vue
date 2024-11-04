@@ -18,6 +18,7 @@
       item-value="id"
       class="mx-auto w-50"
       @update:model-value="fetchCompetenciasPorPrograma"
+      no-data-text="No hay programas disponibles"
     ></v-select>
     <VCardText class="d-flex flex-column gap-y-8">
       <v-data-table
