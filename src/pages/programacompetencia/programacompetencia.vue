@@ -97,7 +97,7 @@ export default {
       if (this.programa != null && this.competenciaSeleccionadas.length > 0) {
         const ids = this.competenciaSeleccionadas.map(objeto => objeto.id)
         const obj = new Object()
-        obj.programaId = this.programa.id
+        obj.programaId = this.programa
         console.log('Progrma id: ', obj.programaId)
         obj.competenciaId = ids
         console.log('competencia ID: ', obj.competenciaId)
@@ -108,7 +108,7 @@ export default {
             },
           })
           this.$notify({ text: 'Competencia guardada con éxito...', type: 'success' })
-          this.gprograma(this.programa.id)
+          this.gprograma(obj.programaId)
           this.competenciaSeleccionadas = []
         } catch (error) {
           console.error('Error al enviar datos:', error)
@@ -119,9 +119,10 @@ export default {
     },
 
     async gprograma(programa) {
-      this.programa = programa
+      programa.id === undefined ? (this.programa = programa) : (this.programa = programa.id)
+      console.log(this.programa)
 
-      if (this.programa != null) {
+      if (this.programa !== null) {
         this.limpiar = true
         const response = await axios.get(`http://localhost:3000/programa/codigo/${this.programa}`, {
           headers: {
@@ -137,10 +138,10 @@ export default {
 
     gcompetencia(competencia) {
       this.limpiar = false
-      const resultado = competencia.filter(
-        item1 => !this.competenciaGuardadas.map(item2 => item2.id).includes(item1.id),
-      )
-      this.competenciaSeleccionadas = resultado
+      // const resultado = competencia.filter(
+      //   item1 => !this.competenciaGuardadas.map(item2 => item2.id).includes(item1.id),
+      // )
+      this.competenciaSeleccionadas = competencia
     },
     predelete(codigo) {
       this.show = true

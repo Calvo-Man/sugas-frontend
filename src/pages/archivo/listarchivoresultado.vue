@@ -24,7 +24,7 @@
           >
             <template #item.actions="{ item }">
               <v-btn
-                v-if="!userRole === 'instructor'"
+                v-if="userRole === 'admin' || userRole === 'coordinador'"
                 color="error"
                 icon
                 @click="predelete(item)"
