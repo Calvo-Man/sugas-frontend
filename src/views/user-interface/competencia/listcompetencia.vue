@@ -38,6 +38,7 @@
       <ConfirmationDialog
         :active="show"
         :codigo="codigo"
+        mensaje="La competencia "
         @cerrarconfirmation="cerrar"
         @procesar="deleteProgram"
       />

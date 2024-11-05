@@ -23,7 +23,7 @@
         <template #item.actions="{ item }">
           <v-btn
             class="mr-5"
-            color="#0090A5"   
+            color="#0090A5"
             icon
             @click="editProgram(item)"
           >
@@ -41,6 +41,7 @@
       <ConfirmationDialog
         :active="show"
         :codigo="codigo"
+        mensaje="El programa "
         @cerrarconfirmation="cerrar"
         @procesar="deleteProgram"
       />
