@@ -24,7 +24,7 @@ import DefaultLayoutWithVerticalNav from './components/DefaultLayoutWithVertical
 }
 @media screen and (min-width: 1280px) {
   .app-color {
-    background-image: url('./../public/logo-sena-azul.png') !important;
+    // background-image: url('./../public/logo-sena-azul.png') !important;
     background-repeat: no-repeat !important;
     background-position: 65% 60% !important;
     background-attachment: fixed !important;

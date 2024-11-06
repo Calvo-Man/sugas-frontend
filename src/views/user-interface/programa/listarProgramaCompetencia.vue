@@ -31,14 +31,14 @@
           v-if="userRole === 'admin'"
           v-slot:item.actions="{ item }"
         >
-          <v-btn
+          <!-- <v-btn
             class="mr-5"
             color="#0090A5"
             icon
             @click="editProgram(item)"
           >
             <v-icon icon="ri-pencil-fill"></v-icon>
-          </v-btn>
+          </v-btn> -->
           <v-btn
             color="error"
             icon

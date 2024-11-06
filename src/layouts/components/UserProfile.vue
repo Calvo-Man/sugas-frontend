@@ -11,12 +11,14 @@ import avatar1 from '@images/avatars/avatar-1.png'
     color="success"
     bordered
   >
+  
     <VAvatar
       class="cursor-pointer"
       color="primary"
       variant="tonal"
     >
       <VImg :src="avatar1" />
+      <VListItemTitle class="font-weight-semibold"> {{ nombre }} </VListItemTitle>
 
       <!-- SECTION Menu -->
       <VMenu
