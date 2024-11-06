@@ -35,10 +35,9 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
 
           <span class="app-logo">
             <img
-              src="../../../public/logo-sena-azul.png"
+              src="../../../public/suga-sena.png"
               alt="Logo sena"
-              width="50"
-              height="50"
+              width="100"
             />
             <span class="app-logo-title">Sistema único de guias de aprendizaje</span>
           </span>

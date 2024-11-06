@@ -8,14 +8,14 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
   <VerticalNavGroup
     :item="{
       title: 'Programa',
-      badgeClass: 'bg-error',
+      // badgeClass: 'bg-error',
       icon: 'ri-home-smile-line',
     }"
   >
     <VerticalNavLink
       :item="{
         title: 'Crear Programa',
-        badgeClass: 'bg-light-primary text-primary',
+        // badgeClass: 'bg-light-primary text-primary',
         to: '/sugas/programa',
       }"
     />
@@ -24,14 +24,14 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
   <VerticalNavGroup
     :item="{
       title: 'Competencia',
-      badgeClass: 'bg-error',
+      // badgeClass: 'bg-error',
       icon: 'ri-home-smile-line',
     }"
   >
     <VerticalNavLink
       :item="{
         title: 'Crear Competencias',
-        badgeClass: 'bg-light-primary text-primary',
+        // badgeClass: 'bg-light-primary text-primary',
         to: '/sugas/competencia',
       }"
     />
@@ -40,21 +40,21 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
   <VerticalNavGroup
     :item="{
       title: 'Asociacion',
-      badgeClass: 'bg-error',
+      // badgeClass: 'bg-error',
       icon: 'ri-home-smile-line',
     }"
   >
     <VerticalNavLink
       :item="{
         title: 'Crear asocacion',
-        badgeClass: 'bg-light-primary text-primary',
+        // // badgeClass: 'bg-light-primary text-primary',
         to: '/sugas/programacompetencia',
       }"
     />
     <VerticalNavLink
       :item="{
         title: 'Ver asociaciones',
-        badgeClass: 'bg-light-primary text-primary',
+        // badgeClass: 'bg-light-primary text-primary',
         to: '/sugas/ver_asociacion',
       }"
     />
@@ -65,13 +65,13 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     :item="{
       title: 'Resultado Aprendizaje',
       icon: 'ri-file-copy-line',
-      badgeClass: 'bg-error',
+      // badgeClass: 'bg-error',
     }"
   >
     <VerticalNavLink
       :item="{
         title: 'Res. Aprendizaje',
-        badgeClass: 'bg-light-primary text-primary',
+        // badgeClass: 'bg-light-primary text-primary',
         to: '/sugas/resultado_aprendizaje',
       }"
     />
@@ -94,7 +94,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     :item="{
       title: 'Gest. Usuarios',
       icon: 'ri-file-copy-line',
-      badgeClass: 'bg-error',
+      // badgeClass: 'bg-error',
     }"
   >
     <VerticalNavLink

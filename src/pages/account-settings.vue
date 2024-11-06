@@ -1,6 +1,4 @@
 <script setup>
-// import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
-// import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
 import { useTheme } from 'vuetify'
 
 const vuetifyTheme = useTheme()
@@ -27,9 +25,9 @@ const isPasswordVisible = ref(false)
           <!-- eslint-disable vue/no-v-html -->
           <div class="d-flex">
             <img
-              src="../../../public/logo.png"
+              src="../../../public/suga-sena.png"
               alt="Logo"
-              width="120"
+              width="150"
             />
           </div>
           <!-- <h2 class="font-weight-medium text-2xl text-uppercase">Sugas</h2> -->
@@ -87,7 +85,7 @@ const isPasswordVisible = ref(false)
                 block
                 to="/auth"
                 type="submit"
-                color="primary"
+                color="#5cb85c"
                 class="btn-submit"
               >
                 Cambiar contraseña

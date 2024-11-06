@@ -33,9 +33,9 @@ const isPasswordVisible = ref(false)
           <!-- eslint-disable vue/no-v-html -->
           <div class="d-flex">
             <img
-              src="../../../public/logo.png"
+              src="../../../public/suga-sena.png"
               alt="Logo"
-              width="120"
+              width="150"
             />
           </div>
           <!-- <h2 class="font-weight-medium text-2xl text-uppercase">Sugas</h2> -->

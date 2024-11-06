@@ -24,14 +24,14 @@ const isPasswordVisible = ref(false)
       <VCardItem class="justify-center">
         <!-- eslint-disable vue/no-v-html -->
         <img
-          src="../../../public/logo.png"
+          src="../../../public/suga-sena.png"
           alt="Logo"
           width="150"
         />
       </VCardItem>
 
       <VCardText class="pt-2">
-        <h4 class="text-h4 mb-1">Welcome to Sugaas! 👋🏻</h4>
+        <h4 class="text-h4 mb-1">¡Cambio de contraseña! ⚙️</h4>
         <p class="mb-0">Ingrese su nueva contrasena</p>
       </VCardText>
 
@@ -47,7 +47,7 @@ const isPasswordVisible = ref(false)
               <v-text-field
                 :disabled="!puede"
                 v-model="password"
-                label="Password"
+                label="Nueva contraseña"
                 :rules="passwordRules"
                 placeholder="············"
                 :type="isPasswordVisible ? 'text' : 'password'"
@@ -61,7 +61,7 @@ const isPasswordVisible = ref(false)
               <v-text-field
                 :disabled="!puede"
                 v-model="confirmPassword"
-                label="Confirm Password"
+                label="Confirmar contraseña"
                 :rules="passwordRules"
                 placeholder="············"
                 :type="isPasswordVisible ? 'text' : 'password'"

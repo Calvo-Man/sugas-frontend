@@ -1,6 +1,4 @@
 <script setup>
-import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
-import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
 import { useTheme } from 'vuetify'
 const form = ref({
   email: '',
@@ -27,7 +25,7 @@ const isPasswordVisible = ref(false)
         <!-- eslint-disable vue/no-v-html -->
         <div class="d-flex">
           <img
-            src="../../../public/logo.png"
+            src="../../../public/suga-sena.png"
             alt="Logo"
             width="100"
           />
@@ -67,7 +65,7 @@ const isPasswordVisible = ref(false)
                 block
                 type="submit"
                 @click="Enviar"
-                color="#0090A5"
+                color="#5cb85c"
               >
                 Enviar
               </VBtn>
