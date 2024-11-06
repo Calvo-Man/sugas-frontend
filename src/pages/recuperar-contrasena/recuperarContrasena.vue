@@ -24,20 +24,19 @@ axios
       mensaje.value =
         response.data.ex.message === 'jwt expired'
           ? 'Token vencido. Por favor, solicite una nueva recuperación de contraseña.'
-          : 'Error al verificar la recuperación de contraseña.'
+          : 'Datos incorrectos. No se puede verificar la recuperación de contraseña.'
       //console.log('Error: ' + response.data.message)
       store.dispatch('reset')
     }
   })
   .catch(error => {
-    console.error('Error al verificar:', error)
+    //console.error('Error al verificar:', error)
     store.dispatch('reset')
     mensaje.value = 'Error al verificar la recuperación de contraseña.'
   })
 </script>
 
 <template>
-  <!-- Renderizar `cambioContrasena` solo si `email` tiene un valor -->
   <cambioContrasena
     v-if="email"
     :email="email"

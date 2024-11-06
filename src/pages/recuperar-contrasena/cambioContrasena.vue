@@ -1,6 +1,4 @@
 <script setup>
-import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
-import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
 import { defineProps } from 'vue'
 import { useTheme } from 'vuetify'
 
