@@ -47,7 +47,7 @@
                   <v-btn
                     color="error"
                     icon
-                    @click="predelete(item.id)"
+                    @click="predelete(item.codigo)"
                   >
                     <v-icon icon="ri-delete-bin-line"></v-icon>
                   </v-btn>
@@ -84,11 +84,13 @@ export default {
       headers: [
         { title: 'Nombre', value: 'nombre' },
         { title: 'Duración', value: 'duracion' },
+        { title: 'Código', value: 'codigo' },
         { title: 'Acciones', value: 'actions', sortable: false },
       ],
       headers2: [
         { title: 'Nombre', value: 'nombre' },
         { title: 'Duración', value: 'duracion' },
+        { title: 'Código', value: 'codigo' },
       ],
     }
   },

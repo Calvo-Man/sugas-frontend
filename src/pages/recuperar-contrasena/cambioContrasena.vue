@@ -82,12 +82,26 @@ const isPasswordVisible = ref(false)
 
               <!-- login button -->
               <VBtn
-                block
                 type="submit"
                 :disabled="!puede"
                 color="#5cb85c"
+                class="me-3"
               >
                 Cambiar contraseña
+              </VBtn>
+              <VBtn
+                v-if="isAuthenticated"
+                color="#0090A5"
+                @click="$router.go(-1)"
+              >
+                Volver
+              </VBtn>
+              <VBtn
+                v-if="!isAuthenticated"
+                color="#0090A5"
+                to="/login"
+              >
+                Volver
               </VBtn>
             </VCol>
           </VRow>
@@ -126,6 +140,9 @@ export default {
   computed: {
     puede() {
       return this.$store.state.puede
+    },
+    isAuthenticated() {
+      return this.$store.state.isAuthenticated
     },
   },
   methods: {

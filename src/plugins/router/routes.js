@@ -35,19 +35,19 @@ export const routes = [
     props: true, // Esto permite pasar los parámetros como props al componente
   },
 
-  {
-    path: '/auth',
-    name: 'CambioContrasena',
-    component: () => import('@/layouts/blank.vue'),
-    redirect: '/auth/cambiar-contrasena',
-    meta: { puede: true, requiresAuth: true },
-    children: [
-      {
-        path: 'cambiar-contrasena',
-        component: () => import('@/pages/recuperar-contrasena/cambioContrasena.vue'),
-      },
-    ],
-  },
+  // {
+  //   path: '/auth',
+  //   name: 'CambioContrasena',
+  //   component: () => import('@/layouts/blank.vue'),
+  //   redirect: '/auth/cambiar-contrasena',
+  //   meta: { puede: true, requiresAuth: true },
+  //   children: [
+  //     {
+  //       path: 'cambiar-contrasena',
+  //       component: () => import('@/pages/recuperar-contrasena/cambioContrasena.vue'),
+  //     },
+  //   ],
+  // },
   {
     path: '/sugas',
     name: 'sugas',
@@ -96,6 +96,10 @@ export const routes = [
         path: 'account-settings',
         meta: { requiresAdmin: false },
         component: () => import('@/pages/account-settings.vue'),
+      },
+      {
+        path: 'cambiar-contrasena',
+        component: () => import('@/pages/recuperar-contrasena/cambioContrasena.vue'),
       },
       {
         path: 'asignar-programa',

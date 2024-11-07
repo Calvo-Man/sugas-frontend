@@ -50,7 +50,7 @@ const isPasswordVisible = ref(false)
               <v-text-field
                 v-model="email"
                 :rules="emailRules"
-                label="Correo"
+                label="Correo electronico"
                 placeholder="example@example.com"
                 autocomplete="email"
               />
@@ -62,12 +62,19 @@ const isPasswordVisible = ref(false)
                AZUL: color="#0090A5"
                -->
               <VBtn
-                block
                 type="submit"
+                class="me-3"
                 @click="Enviar"
                 color="#5cb85c"
               >
                 Enviar
+              </VBtn>
+
+              <VBtn
+                @click="() => $router.go(-1)"
+                color="#0090A5"
+              >
+                Volver
               </VBtn>
             </VCol>
           </VRow>

@@ -34,7 +34,7 @@ const isPasswordVisible = ref(false)
         </div>
       </VCardItem>
 
-      <VCardText class="pt-2">
+      <VCardText class="pt-2 text-center">
         <h4 class="text-h4 mb-1">Bienvenido a SUGA! 👋🏻</h4>
         <p class="mb-0">Inicia sesión con tus credenciales.</p>
       </VCardText>

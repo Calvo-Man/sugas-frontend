@@ -83,7 +83,7 @@ const isPasswordVisible = ref(false)
             <VCol cols="12">
               <v-btn
                 block
-                to="/auth"
+                to="/sugas/cambiar-contrasena"
                 type="submit"
                 color="#5cb85c"
                 class="btn-submit"
