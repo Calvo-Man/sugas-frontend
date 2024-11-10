@@ -106,11 +106,15 @@ export default {
         this.mensaje_error_nombre = null
         try {
           this.dialog = true
-          const response = await axios.post('http://localhost:3000/programa/CrearPrograma', this.paquete, {
-            headers: {
-              Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+          const response = await axios.post(
+            `${import.meta.env.VITE_API_BACKEND}/programa/CrearPrograma`,
+            this.paquete,
+            {
+              headers: {
+                Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+              },
             },
-          })
+          )
 
           if (!response.data.success) {
             response.data.column === 'codigo'
@@ -137,7 +141,7 @@ export default {
       try {
         // this.paquete.id  = this.id
         this.dialog = true
-        const response = await axios.patch(`http://localhost:3000/programa/${this.id}`, this.paquete, {
+        const response = await axios.patch(`${import.meta.env.VITE_API_BACKEND}/programa/${this.id}`, this.paquete, {
           headers: {
             Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
           },

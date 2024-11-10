@@ -35,14 +35,14 @@ export default {
   methods: {},
   async mounted() {
     if (store.state.user.rol == 'admin') {
-      const response = await axios.get('http://localhost:3000/programa/', {
+      const response = await axios.get(`${import.meta.env.VITE_API_BACKEND}/programa/`, {
         headers: {
           Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
         },
       })
       this.items = response.data
     } else {
-      const response = await axios.get(`http://localhost:3000/usuarios/${this.id}/programas-asignados`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_BACKEND}/usuarios/${this.id}/programas-asignados`, {
         headers: {
           Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
         },

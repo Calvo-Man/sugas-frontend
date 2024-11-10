@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     async recargar() {
-      const response = await axios.get('http://localhost:3000/competencia/', {
+      const response = await axios.get(`${import.meta.env.VITE_API_BACKEND}/competencia/`, {
         headers: {
           Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
         },
@@ -103,7 +103,7 @@ export default {
     },
 
     async deleteProgram(codigo) {
-      const response = await axios.delete(`http://localhost:3000/competencia/${codigo}`, {
+      const response = await axios.delete(`${import.meta.env.VITE_API_BACKEND}/competencia/${codigo}`, {
         headers: {
           Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
         },

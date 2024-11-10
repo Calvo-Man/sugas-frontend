@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     async recargar() {
-      const response = await axios.get(`http://localhost:3000/archivo/${this.idresultado}`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_BACKEND}/archivo/${this.idresultado}`, {
         headers: {
           Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
         },
@@ -113,7 +113,7 @@ export default {
     },
 
     async deleteArchivo() {
-      const response = await axios.delete(`http://localhost:3000/archivo/${this.item.id}`, {
+      const response = await axios.delete(`${import.meta.env.VITE_API_BACKEND}/archivo/${this.item.id}`, {
         headers: {
           Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
         },

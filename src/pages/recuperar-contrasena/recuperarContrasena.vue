@@ -14,7 +14,7 @@ const mensaje = ref(null)
 const email = ref(null)
 
 axios
-  .get(`http://localhost:3000/usuarios/puede-recuperar/${cedula}/${token}`)
+  .get(`${import.meta.env.VITE_API_BACKEND}/usuarios/puede-recuperar/${cedula}/${token}`)
   .then(response => {
     if (response.data.puede) {
       store.dispatch('cambiar')

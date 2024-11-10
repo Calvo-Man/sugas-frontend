@@ -36,7 +36,7 @@ export default {
     }
   },
   async mounted() {
-    const response = await axios.get('http://localhost:3000/competencia/', {
+    const response = await axios.get(`${import.meta.env.VITE_API_BACKEND}/competencia/`, {
       headers: {
         Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
       },

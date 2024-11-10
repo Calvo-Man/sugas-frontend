@@ -112,11 +112,14 @@ export default {
     async fechtInstructoresPorPrograma() {
       if (this.programaSelected) {
         try {
-          const response = await axios.get(`http://localhost:3000/programa/${this.programaSelected}/instructores`, {
-            headers: {
-              Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+          const response = await axios.get(
+            `${import.meta.env.VITE_API_BACKEND}/programa/${this.programaSelected}/instructores`,
+            {
+              headers: {
+                Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+              },
             },
-          })
+          )
           this.competencias = response.data
 
           this.$emit('plistado')
@@ -128,7 +131,7 @@ export default {
 
     async fetchProgramas() {
       try {
-        const response = await axios.get('http://localhost:3000/programa', {
+        const response = await axios.get(`${import.meta.env.VITE_API_BACKEND}/programa`, {
           headers: {
             Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
           },
@@ -141,7 +144,7 @@ export default {
     async fetchProgramasAsignadas() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/usuarios/${this.$store.getters.getUser.id}/programas-asignados`,
+          `${import.meta.env.VITE_API_BACKEND}/usuarios/${this.$store.getters.getUser.id}/programas-asignados`,
           {
             headers: {
               Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
@@ -170,7 +173,9 @@ export default {
     async deleteInstructor(codigo) {
       console.log(codigo)
       const response = await axios.delete(
-        `http://localhost:3000/programas-instructor/programa/${this.programaSelected}/instructor/${codigo}`,
+        `${import.meta.env.VITE_API_BACKEND}/programas-instructor/programa/${
+          this.programaSelected
+        }/instructor/${codigo}`,
         {
           headers: {
             Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,

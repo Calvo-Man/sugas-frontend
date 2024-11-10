@@ -104,7 +104,7 @@ export default {
         obj.competenciaId = ids
         console.log('competencia ID: ', obj.competenciaId)
         try {
-          const response = await axios.post(`http://localhost:3000/programacompetencia`, obj, {
+          const response = await axios.post(`${import.meta.env.VITE_API_BACKEND}/programacompetencia`, obj, {
             headers: {
               Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
             },
@@ -126,7 +126,7 @@ export default {
 
       if (this.programa !== null) {
         this.limpiar = true
-        const response = await axios.get(`http://localhost:3000/programa/codigo/${this.programa}`, {
+        const response = await axios.get(`${import.meta.env.VITE_API_BACKEND}/programa/codigo/${this.programa}`, {
           headers: {
             Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
           },
@@ -156,7 +156,7 @@ export default {
     async delcompetprograma(id) {
       try {
         const response = await axios.delete(
-          `http://localhost:3000/programacompetencia/${this.programa}/competencia/${id}`,
+          `${import.meta.env.VITE_API_BACKEND}/programacompetencia/${this.programa}/competencia/${id}`,
           {
             headers: {
               Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,

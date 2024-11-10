@@ -108,11 +108,14 @@ export default {
     async fetchCompetenciasPorPrograma() {
       if (this.programaSelected) {
         try {
-          const response = await axios.get(`http://localhost:3000/programa/${this.programaSelected}/competencias`, {
-            headers: {
-              Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+          const response = await axios.get(
+            `${import.meta.env.VITE_API_BACKEND}/programa/${this.programaSelected}/competencias`,
+            {
+              headers: {
+                Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
+              },
             },
-          })
+          )
           this.competencias = response.data
 
           this.$emit('plistado')
@@ -131,7 +134,7 @@ export default {
 
     async fetchProgramas() {
       try {
-        const response = await axios.get('http://localhost:3000/programa', {
+        const response = await axios.get(`${import.meta.env.VITE_API_BACKEND}/programa`, {
           headers: {
             Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
           },
@@ -144,7 +147,7 @@ export default {
     async fetchProgramasAsignadas() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/usuarios/${this.$store.getters.getUser.id}/programas-asignados`,
+          `${import.meta.env.VITE_API_BACKEND}/usuarios/${this.$store.getters.getUser.id}/programas-asignados`,
           {
             headers: {
               Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
@@ -173,7 +176,7 @@ export default {
     async deleteProgram(codigo) {
       console.log(codigo)
       const response = await axios.delete(
-        `http://localhost:3000/programacompetencia/${this.programaSelected}/competencia/${this.codigo}`,
+        `${import.meta.env.VITE_API_BACKEND}/programacompetencia/${this.programaSelected}/competencia/${this.codigo}`,
         {
           headers: {
             Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,

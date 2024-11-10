@@ -178,7 +178,7 @@ export default {
       try {
         this.dialog = true
 
-        const response = await axios.post('http://localhost:3000/auth/register', this.paquete, {
+        const response = await axios.post(`${import.meta.env.VITE_API_BACKEND}/auth/register`, this.paquete, {
           headers: {
             Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
           },
