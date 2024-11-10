@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import { useTheme } from 'vuetify'
 import misc404 from '@images/pages/404.png'
 import miscMaskDark from '@images/pages/misc-mask-dark.png'
