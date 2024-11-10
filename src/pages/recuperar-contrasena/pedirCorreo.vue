@@ -64,7 +64,6 @@ const isPasswordVisible = ref(false)
               <VBtn
                 type="submit"
                 class="me-3"
-                @click="Enviar"
                 color="#5cb85c"
               >
                 Enviar

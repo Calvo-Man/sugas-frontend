@@ -99,7 +99,6 @@ const isPasswordVisible = ref(false)
               <VBtn
                 block
                 type="submit"
-                @click="login"
                 color="#5cb85c"
               >
                 Iniciar sesion
