@@ -35,7 +35,7 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
 
           <span class="app-logo">
             <img
-              src="../../../public/suga-sena.png"
+              src="/suga-sena.png"
               alt="Logo sena"
               width="100"
             />
@@ -57,7 +57,7 @@ import NavItemsInstructor from './NavItemsInstructor.vue'
         <!-- eslint-disable vue/no-v-html -->
         <div class="d-flex">
           <img
-            src="../../../public/logo.png"
+            src="/logo.png"
             alt="Logo"
             width="180"
             height="130"

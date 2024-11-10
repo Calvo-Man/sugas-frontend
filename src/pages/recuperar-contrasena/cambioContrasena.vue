@@ -24,7 +24,7 @@ const isPasswordVisible = ref(false)
       <VCardItem class="justify-center">
         <!-- eslint-disable vue/no-v-html -->
         <img
-          src="../../../public/suga-sena.png"
+          src="/suga-sena.png"
           alt="Logo"
           width="150"
         />
