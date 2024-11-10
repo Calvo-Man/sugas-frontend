@@ -27,7 +27,7 @@ const isPasswordVisible = ref(false)
         <!-- eslint-disable vue/no-v-html -->
         <div class="d-flex">
           <img
-            src="../../../public/suga-sena.png"
+            src="/suga-sena.png"
             alt="Logo"
             width="150"
           />
