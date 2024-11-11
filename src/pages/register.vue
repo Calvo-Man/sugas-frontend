@@ -193,7 +193,7 @@ export default {
     },
     async fetchRoles() {
       try {
-        const response = await axios.get('http://localhost:3000/roles', {
+        const response = await axios.get(`${import.meta.env.VITE_API_BACKEND}/roles`, {
           headers: {
             Authorization: `Bearer ${this.$store.getters.getUser.access_token}`,
           },
