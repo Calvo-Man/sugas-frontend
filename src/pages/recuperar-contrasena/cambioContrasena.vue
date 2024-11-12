@@ -119,7 +119,7 @@ export default {
   data: () => ({
     API: process.env.VUE_APP_API,
     loading: false,
-    // email: '',
+    email: '',
     emailRules: [
       value => !!value || 'E-mail is required.',
       value => /.+@.+\..+/.test(value) || 'E-mail must be valid.',
