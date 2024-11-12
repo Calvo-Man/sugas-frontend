@@ -72,12 +72,12 @@ const isPasswordVisible = ref(false)
                 color="#2D882D"
               />
             </VCol>
-            <p
+            <span
               v-if="emailError"
               style="color: red"
             >
               {{ emailError }}
-            </p>
+            </span>
 
             <!-- cedula -->
             <VCol cols="12">
@@ -88,12 +88,12 @@ const isPasswordVisible = ref(false)
                 color="#2D882D"
               />
             </VCol>
-            <p
+            <span
               v-if="cedulaError"
               style="color: red"
             >
               {{ cedulaError }}
-            </p>
+            </span>
 
             <!-- telefono -->
             <VCol cols="12">
@@ -104,12 +104,12 @@ const isPasswordVisible = ref(false)
                 color="#2D882D"
               />
             </VCol>
-            <p
+            <span
               v-if="telefonoError"
               style="color: red"
             >
               {{ telefonoError }}
-            </p>
+            </span>
             <!-- programas -->
 
             <!-- password -->
