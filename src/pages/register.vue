@@ -72,6 +72,12 @@ const isPasswordVisible = ref(false)
                 color="#2D882D"
               />
             </VCol>
+            <p
+              v-if="emailError"
+              style="color: red"
+            >
+              {{ emailError }}
+            </p>
 
             <!-- cedula -->
             <VCol cols="12">
@@ -82,6 +88,12 @@ const isPasswordVisible = ref(false)
                 color="#2D882D"
               />
             </VCol>
+            <p
+              v-if="cedulaError"
+              style="color: red"
+            >
+              {{ cedulaError }}
+            </p>
 
             <!-- telefono -->
             <VCol cols="12">
@@ -92,6 +104,12 @@ const isPasswordVisible = ref(false)
                 color="#2D882D"
               />
             </VCol>
+            <p
+              v-if="telefonoError"
+              style="color: red"
+            >
+              {{ telefonoError }}
+            </p>
             <!-- programas -->
 
             <!-- password -->
@@ -162,6 +180,9 @@ export default {
         password: '',
         role: null,
       },
+      emailError: null,
+      cedulaError: null,
+      telefonoError: null,
       id: null,
       dialog: false,
       rules: {
@@ -175,6 +196,9 @@ export default {
 
   methods: {
     async registrar() {
+      this.emailError = null
+      this.cedulaError = null
+      this.telefonoError = null
       try {
         this.dialog = true
 
@@ -188,7 +212,15 @@ export default {
         this.$emit('pguardar')
         this.dialog = false
       } catch (error) {
-        console.error('Error al enviar datos:', error)
+        if (error.response.data.message === 'El usuario ya existe') {
+          this.emailError = 'El usuario ya existe'
+        }
+        if (error.response.data.message === 'La cedula ya existe') {
+          this.cedulaError = 'La cedula ya existe'
+        }
+        if (error.response.data.message === 'El telefono ya existe') {
+          this.telefonoError = 'El telefono ya existe'
+        }
       }
     },
     async fetchRoles() {
@@ -200,7 +232,7 @@ export default {
         })
         this.roles = response.data
       } catch (error) {
-        console.error('Error al obtener los roles:', error)
+        //console.error('Error al obtener los roles:', error)
       }
     },
 
