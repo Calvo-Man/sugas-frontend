@@ -135,7 +135,7 @@ export default {
   }),
 
   async mounted() {
-    //this.email = this.$store.getters.getUser.email
+    this.email = this.$store.getters.getUser.email
   },
   computed: {
     puede() {
