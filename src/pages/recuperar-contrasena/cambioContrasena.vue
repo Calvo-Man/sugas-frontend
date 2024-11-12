@@ -171,7 +171,7 @@ export default {
         this.confirmPassword = ''
         this.$notify({ text: response.data.message, type: 'success' })
         store.dispatch('reset')
-        this.$router.push({ path: '/sugas' })
+        //this.$router.push({ path: '/sugas' })
       } catch (error) {
         if (error.response) {
           // console.error('Error de respuesta:', error.response.data)
