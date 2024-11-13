@@ -152,7 +152,6 @@ export default {
         this.passwordError = 'Las contraseñas no coinciden' // Actualiza el mensaje de error
         return
       }
-
       // Limpiar el mensaje de error si todo está correcto
       this.passwordError = ''
       const isValid = this.$refs.form.validate() // Valida el formulario
@@ -173,7 +172,6 @@ export default {
         if (!this.isAuthenticated) {
           store.dispatch('reset')
         }
-
         //this.$router.push({ path: '/sugas' })
       } catch (error) {
         if (error.response) {
