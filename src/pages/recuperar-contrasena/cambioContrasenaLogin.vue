@@ -1,10 +1,5 @@
 <script setup>
-import { defineProps } from 'vue'
 import { useTheme } from 'vuetify'
-
-const props = defineProps({
-  email: String,
-})
 
 const vuetifyTheme = useTheme()
 
@@ -89,8 +84,15 @@ const isPasswordVisible = ref(false)
               >
                 Cambiar contraseña
               </VBtn>
-
               <VBtn
+                v-if="isAuthenticated"
+                color="#0090A5"
+                @click="$router.go(-1)"
+              >
+                Volver
+              </VBtn>
+              <VBtn
+                v-if="!isAuthenticated"
                 color="#0090A5"
                 to="/login"
               >
@@ -106,13 +108,12 @@ const isPasswordVisible = ref(false)
   </div>
 </template>
 <script>
-import store from '@/store'
 import axios from 'axios'
 export default {
   data: () => ({
     API: process.env.VUE_APP_API,
     loading: false,
-    //email: '',
+    email: '',
     emailRules: [
       value => !!value || 'E-mail is required.',
       value => /.+@.+\..+/.test(value) || 'E-mail must be valid.',
@@ -128,9 +129,7 @@ export default {
   }),
 
   async mounted() {
-    // if (this.$store.state.isAuthenticated) {
-    //   this.email = this.$store.getters.getUser.email
-    // }
+    this.email = this.$store.getters.getUser.email
   },
   computed: {
     puede() {
@@ -164,8 +163,6 @@ export default {
         this.password = ''
         this.confirmPassword = ''
         this.$notify({ text: response.data.message, type: 'success' })
-
-        store.dispatch('reset')
 
         //this.$router.push({ path: '/sugas' })
       } catch (error) {

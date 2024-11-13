@@ -99,7 +99,7 @@ export const routes = [
       },
       {
         path: 'cambiar-contrasena',
-        component: () => import('@/pages/recuperar-contrasena/cambioContrasena.vue'),
+        component: () => import('@/pages/recuperar-contrasena/cambioContrasenaLogin.vue'),
       },
       {
         path: 'asignar-programa',
