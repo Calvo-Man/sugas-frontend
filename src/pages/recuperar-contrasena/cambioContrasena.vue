@@ -135,7 +135,9 @@ export default {
   }),
 
   async mounted() {
-    this.email = this.$store.getters.getUser.email
+    if (this.$store.state.isAuthenticated) {
+      this.email = this.$store.getters.getUser.email
+    }
   },
   computed: {
     puede() {
