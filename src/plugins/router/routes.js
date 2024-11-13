@@ -9,6 +9,11 @@ export const routes = [
         path: 'login',
         component: () => import('@/pages/login.vue'),
       },
+      {
+        path: '/:pathMatch(.*)*',
+        redirect: 'login',
+        component: () => import('@/pages/[...error].vue'), // Para rutas no encontradas
+      },
     ],
   },
   {

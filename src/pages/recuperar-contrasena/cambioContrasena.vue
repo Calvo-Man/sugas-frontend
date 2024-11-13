@@ -170,7 +170,10 @@ export default {
         this.password = ''
         this.confirmPassword = ''
         this.$notify({ text: response.data.message, type: 'success' })
-        store.dispatch('reset')
+        if (!this.isAuthenticated) {
+          store.dispatch('reset')
+        }
+
         //this.$router.push({ path: '/sugas' })
       } catch (error) {
         if (error.response) {
