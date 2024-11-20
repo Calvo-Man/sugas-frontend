@@ -35,19 +35,6 @@ export const routes = [
     props: true, // Esto permite pasar los parámetros como props al componente
   },
 
-  // {
-  //   path: '/auth',
-  //   name: 'CambioContrasena',
-  //   component: () => import('@/layouts/blank.vue'),
-  //   redirect: '/auth/cambiar-contrasena',
-  //   meta: { puede: true, requiresAuth: true },
-  //   children: [
-  //     {
-  //       path: 'cambiar-contrasena',
-  //       component: () => import('@/pages/recuperar-contrasena/cambioContrasena.vue'),
-  //     },
-  //   ],
-  // },
   {
     path: '/sugas',
     name: 'sugas',
@@ -84,7 +71,6 @@ export const routes = [
       },
       {
         path: 'cargar_archivo',
-
         component: () => import('@/pages/archivo/archivocarga.vue'),
       },
       {
@@ -105,6 +91,11 @@ export const routes = [
         path: 'asignar-programa',
         meta: { requiresAdmin: true },
         component: () => import('@/pages/usuarios/asignarProgramas.vue'),
+      },
+      {
+        path: 'ver-usuarios',
+        meta: { requiresAdmin: true },
+        component: () => import('@/pages/usuarios/listarUsuarios.vue'),
       },
     ],
   },

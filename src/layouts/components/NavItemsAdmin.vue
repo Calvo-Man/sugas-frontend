@@ -111,6 +111,13 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
         to: 'asignar-programa',
       }"
     />
+    <VerticalNavLink
+      :item="{
+        title: 'Ver Usuarios',
+        icon: 'ri-user-add-line',
+        to: 'ver-usuarios',
+      }"
+    />
   </VerticalNavGroup>
   <!-- 
   <VerticalNavLink
