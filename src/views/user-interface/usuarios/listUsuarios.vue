@@ -121,6 +121,7 @@ export default {
         this.$notify({ text: 'Usuario eliminado con éxito...', type: 'success' })
         this.show = false
         this.codigo = null
+        this.fechtInstructores()
       } catch (error) {
         this.$notify({ text: error.response.data.message, type: 'error' })
         this.show = false
